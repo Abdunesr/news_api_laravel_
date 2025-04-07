@@ -14,4 +14,8 @@ class User extends Authenticatable
         'email',
         'password',
     ];
+    public function preferences()
+    {
+        return $this->hasMany(UserPreference::class);
+    }
 }
