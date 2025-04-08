@@ -11,10 +11,10 @@
         <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col lg:flex-row justify-between items-center gap-4">
             {{-- Logo and Categories --}}
             <div class="flex items-center gap-4">
-                <a href="{{ url('/') }}" class="text-2xl font-bold text-blue-600">NewsHub</a>
+                <a href="{{ url('/') }}" class="text-2xl font-bold text-yellow-600">EwnetNews</a>
                 <nav class="space-x-3 hidden md:flex">
                     @foreach(['sports', 'politics', 'entertainment', 'technology', 'science'] as $category)
-                        <a href="{{ url('/?category=' . $category) }}" class="text-sm font-medium text-gray-700 hover:text-blue-500 capitalize">
+                        <a href="{{ url('/?category=' . $category) }}" class="text-sm font-medium text-gray-700 hover:text-yellow-500 capitalize">
                             {{ $category }}
                         </a>
                     @endforeach
@@ -25,11 +25,11 @@
             @if (Route::has('login'))
                 <nav class="flex items-center gap-4">
                     @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 hover:text-blue-500">Dashboard</a>
+                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 hover:text-yellow-500">Dashboard</a>
                     @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 hover:text-blue-500">Log in</a>
+                        <a href="{{ route('login') }}" class="text-sm text-gray-700 hover:text-yellow-500">Log in</a>
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="text-sm text-gray-700 hover:text-blue-500">Register</a>
+                            <a href="{{ route('register') }}" class="text-sm text-gray-700 hover:text-yellow-500">Register</a>
                         @endif
                     @endauth
                 </nav>

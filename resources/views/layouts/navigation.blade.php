@@ -10,6 +10,10 @@
                     </a>
                 </div>
 
+
+
+
+
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
@@ -17,7 +21,18 @@
                     </x-nav-link>
                 </div>
             </div>
+<div class="mt-3 flex items-center gap-8">
 
+
+    @foreach(['sports', 'politics', 'entertainment', 'technology', 'science'] as $category)
+    <a href="{{ url('/?category=' . $category) }}" class="text-sm font-medium text-gray-700 hover:text-yellow-500 capitalize">
+        {{ $category }}
+    </a>
+@endforeach
+
+</div>
+               
+           
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <x-dropdown align="right" width="48">
