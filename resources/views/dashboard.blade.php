@@ -51,5 +51,8 @@
   
             </div>
         </div>
+       
     </div>
+    <x-mini.footer > </x-mini.footer>
+   
 </x-app-layout>

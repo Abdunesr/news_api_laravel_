@@ -2,7 +2,7 @@
     <div class="max-w-7xl mx-auto px-6">
         <div class="grid md:grid-cols-4 gap-12">
             <div>
-                <h3 class="text-white text-xl font-bold mb-4">NewsHub</h3>
+                <h3 class="text-white text-xl font-bold mb-4">EwnetNews</h3>
                 <p class="mb-4">The most trusted source for breaking news and in-depth analysis.</p>
                 <div class="flex space-x-4">
                     <a href="#" class="text-gray-400 hover:text-white transition-colors">
@@ -39,7 +39,7 @@
                 <p class="mb-4">Get the latest news delivered to your inbox</p>
                 <form class="flex">
                     <input type="email" placeholder="Your email" class="px-4 py-2 w-full rounded-l-lg focus:outline-none text-gray-900">
-                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-r-lg text-white font-medium">Subscribe</button>
+                    <button type="submit" class="bg-yellow-600 hover:bg-yellow-700 px-4 py-2 rounded-r-lg text-white font-medium">Subscribe</button>
                 </form>
             </div>
         </div>
