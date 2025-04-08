@@ -1,24 +1,22 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
+namespace App\Models;
 
-return new class extends Migration
+use Jenssegers\Mongodb\Auth\User as Authenticatable; // Use MongoDB Auth Model
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
+class User extends Authenticatable
 {
-    public function up()
-    {
-        Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->timestamps(); // creates created_at and updated_at columns
-        });
-    }
+    use HasFactory;
 
-    public function down()
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+    ];
+
+    public function preferences()
     {
-        Schema::dropIfExists('users');
+        return $this->hasMany(UserPreference::class);
     }
-};
+}

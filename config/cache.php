@@ -51,6 +51,11 @@ return [
             'path' => storage_path('framework/cache/data'),
             'lock_path' => storage_path('framework/cache/data'),
         ],
+        'mongodb' => [
+    'driver' => 'mongodb',
+    'table' => 'cache',
+    'connection' => 'mongodb',
+],
 
         'memcached' => [
             'driver' => 'memcached',
