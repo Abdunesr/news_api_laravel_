@@ -44,7 +44,7 @@
             </div>
         </div>
         <div class="border-t border-gray-800 mt-12 pt-8 text-center">
-            <p>&copy; 2023 NewsHub. All rights reserved.</p>
+            <p>&copy; 2023 EwnetNews. All rights reserved.</p>
         </div>
     </div>
 </footer>
