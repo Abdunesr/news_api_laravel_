@@ -1,9 +1,7 @@
 <x-app-layout>
+   
     <x-slot name="header">
-            <!-- Original Dashboard Content -->
-            
-                  {{ __("You're logged in!") }}
-            
+       
 
    
             <!-- Added News Section -->
