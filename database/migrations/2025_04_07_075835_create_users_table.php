@@ -13,7 +13,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-    ];
+    ];// Migration
+    // Removed invalid code from the model class
+    
 
     public function preferences()
     {
