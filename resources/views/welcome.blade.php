@@ -35,8 +35,8 @@
                 @auth
                     <a href="/dashboard" class="px-4 py-2 bg-yellow-600 text-white rounded-lg hover:bg-yellow-700 transition-colors">Dashboard</a>
                 @else
-                    <a href="{{ route('login') }}" class="px-4 py-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">Login</a>
-                    <a href="{{ route('register') }}" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">Register</a>
+                    <a href="{{ route('login') }}" class="px-4 py-2 text-yellow-600 hover:bg-yellow-50 rounded-lg transition-colors">Login</a>
+                    <a href="{{ route('register') }}" class="px-4 py-2 bg-yellow-600 text-white rounded-lg hover:bg-yellow-700 transition-colors">Register</a>
                 @endauth
             </div>
         </div>
@@ -46,17 +46,17 @@
     <section class="bg-slate-300 text-black">
         <div class="max-w-7xl mx-auto px-6 py-24 md:py-32 flex flex-col md:flex-row items-center">
             <div class="md:w-1/2 mb-12 md:mb-0 animate__animated animate__fadeInLeft">
-                <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Stay Informed With <span class="underline decoration-black">The Latest News</span></h1>
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Stay Informed With The <span class=" text-yellow-500">Latest News</span></h1>
                 <p class="text-xl mb-8 text-black max-w-lg">Get real-time updates on global events, business, technology, and more. Curated by experts, delivered to you.</p>
                 <div class="flex space-x-4">
                     <a href="{{ route('register') }}" class="px-8 py-3 bg-white text-yellow-600 font-bold rounded-lg hover:bg-gray-100 transition-colors shadow-lg">Get Started</a>
                     <a href="#features" class="px-8 py-3 border-2 text-yellow-500 border-white  font-bold rounded-lg hover:bg-white hover:text-yellow-600 transition-colors">Learn More</a>
                 </div>
             </div>
-            <div class="md:w-1/2 animate__animated animate__fadeInRight">
-                <img src="https://th.bing.com/th/id/OIP.YId7-OdpWesx1pt8EOi_igHaFs?w=1200&h=924&rs=1&pid=ImgDetMain" 
+            <div class="md:w-1/2 rounded-2xl animate__animated animate__fadeInRight">
+                <img src={{ asset('logo.png') }}
                      alt="World News" 
-                     class="    transform rotate-2 hover:rotate-0 transition-transform duration-300">
+                     >
             </div>
         </div>
     </section>
@@ -189,7 +189,7 @@
     <section class="py-20 bg-gradient-to-r from-yellow-600 to-yellow-200 text-white">
         <div class="max-w-4xl mx-auto px-6 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Stay Updated?</h2>
-            <p class="text-xl mb-8 text-blue-100 max-w-2xl mx-auto">Join thousands of informed readers who trust NewsHub for their daily news.</p>
+            <p class="text-xl mb-8 text-blue-100 max-w-2xl mx-auto">Join thousands of informed readers who trust EwnetNews for their daily news.</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="{{ route('register') }}" class="px-8 py-3 bg-white text-black font-bold rounded-lg hover:bg-gray-100 transition-colors shadow-lg">Sign Up Free</a>
                 <a href="#" class="px-8 py-3 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-black transition-colors">Take a Tour</a>
