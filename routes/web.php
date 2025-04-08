@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Middleware\AdminMiddleware;
 use App\Models\News;
 use Illuminate\Support\Facades\Route;
 
@@ -19,13 +21,9 @@ Route::get('/', function () {
 
 
 Route::get('/news/{id}', function ($id) {
-    $response = Http::get("http://127.0.0.1:8000/api/news/{$id}");
-    if ($response->failed()) {
-        abort(404);
-    }
-    return view('news-detail', ['news' => $response->json()]);
-});
-
+    $news =News::findOrFail($id); // Fetch from DB directly
+    return view('news-detail', ['news' => $news]);
+})->name('news.show');
 Route::get('/dashboard', function () {
     $news = News::all();
     return view('dashboard', ['news' => $news]);
@@ -35,6 +33,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+Route::middleware(['auth', AdminMiddleware::class])->prefix('admin')->group(function () {
+    Route::get('/post-news', [NewsController::class, 'create'])->name('admin.news.create');
+    Route::post('/post-news', [NewsController::class, 'store'])->name('admin.news.store');
 });
 
 require __DIR__.'/auth.php';

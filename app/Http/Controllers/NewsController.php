@@ -17,12 +17,17 @@ class NewsController extends Controller
         $news = News::all(); // Retrieve all news
         return response()->json($news);
     }
-
+public function create(){
+    return view('admin.add_post');
+}
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
+        if (auth()->user()->role !== 'admin') {
+            return response()->json(['message' => 'Unauthorized'], 403);
+        }
         $validator = Validator::make($request->all(), [
             'title' => 'required|string|max:255',
             'content' => 'required|string',
@@ -54,8 +59,8 @@ class NewsController extends Controller
             'image_url' => $request->image_url,
             'video_url' => $request->video_url,
         ]);
-
-        return response()->json($news, 201); // Return created news
+        $news = News::create($request->all());
+        return response()->json($news, 201);  // Return created news
     }
 
     /**
