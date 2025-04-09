@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GeminiController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\AdminMiddleware;
@@ -38,5 +39,6 @@ Route::middleware(['auth', AdminMiddleware::class])->prefix('admin')->group(func
     Route::get('/post-news', [NewsController::class, 'create'])->name('admin.news.create');
     Route::post('/post-news', [NewsController::class, 'store'])->name('admin.news.store');
 });
+Route::post('/bot-response', [GeminiController::class, 'respond']);
 
 require __DIR__.'/auth.php';

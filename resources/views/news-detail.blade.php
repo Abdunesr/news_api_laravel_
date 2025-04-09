@@ -4,7 +4,9 @@
 <x-app-layout >
     
     <x-slot name="header"> 
+  <div class="flex">
 
+  
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <!-- Article Header -->
             <div class="text-center mb-10">
@@ -318,15 +320,36 @@
                     </button>
                 </div>
             </div>
+               
+        </div>
+         <div class="mt-12 w-[400px] mx-auto" >   @include('components.bot.bot', ['news' => $news]) </div>
         </div>
 
 
 
-    </x-slot>
+        
+
+        
+      
+    
+     
+ 
+    
+    
+</x-slot>
+
+
 
 
 
 </x-app-layout>
+
+
+
+
+
+
+
 
 
 

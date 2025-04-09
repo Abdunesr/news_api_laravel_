@@ -144,6 +144,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
     MongoDB\Laravel\MongoDBServiceProvider::class,
         Illuminate\Auth\AuthServiceProvider::class,
+        
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
         Illuminate\Cache\CacheServiceProvider::class,
@@ -173,3 +174,4 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\URL; 
+use Illuminate\Support\Facades\Http;
