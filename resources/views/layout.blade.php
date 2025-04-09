@@ -14,7 +14,7 @@
                 <a href="{{ url('/') }}" class="text-2xl font-bold text-yellow-600">EwnetNews</a>
                 <nav class="space-x-3 hidden md:flex">
                     @foreach(['sports', 'politics', 'entertainment', 'technology', 'science'] as $category)
-                        <a href="{{ url('/?category=' . $category) }}" class="text-sm font-medium text-gray-700 hover:text-yellow-500 capitalize">
+                        <a href="{{ route('dashboard') }}" class="text-sm font-medium text-gray-700 hover:text-yellow-500 capitalize">
                             {{ $category }}
                         </a>
                     @endforeach

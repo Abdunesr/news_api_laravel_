@@ -109,7 +109,7 @@
             
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
                 @foreach(['Politics', 'Technology', 'Business', 'Sports', 'Entertainment', 'Science', 'Health', 'World', 'Finance', 'Travel'] as $category)
-                    <a href="{{ url('/?category=' . strtolower($category)) }}" 
+                    <a href="{{ url('/category/' . strtolower($category)) }}" 
                        class="category-chip bg-white p-6 rounded-lg shadow-md flex flex-col items-center justify-center text-center hover:bg-blue-50 transition-colors">
                         <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mb-3">
                             <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">

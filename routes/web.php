@@ -7,18 +7,48 @@ use App\Http\Middleware\AdminMiddleware;
 use App\Models\News;
 use Illuminate\Support\Facades\Route;
 
+/* 
 Route::get('/', function () {
-    
     $category = request('category');
-    $news = News::all(); // or News::where(...)->get()
 
+    // Create a query builder instance
+    $newsQuery = News::query();
+
+    // If a category filter is provided, apply it
     if ($category) {
-        $news = $news->where('category', $category)->values();
+        $newsQuery->where('category', $category);
     }
 
-    return view('welcome', ['news' => $news]);
+    // Fetch the filtered news, latest first
+    $news = $newsQuery->orderBy('published_at', 'desc')->get();
 
+    return view('welcome', ['news' => $news]);
+})->name('home'); */
+
+
+// In your routes/web.php
+Route::get('/category/{category}', function($category) {
+    $news = News::where('category', $category)
+               ->orderBy('published_at', 'desc')
+               ->get();
+               
+    return view('dashboard', compact('news', 'category'));
+})->name('dashboard')->middleware(['auth', 'verified']);
+
+// Update your home route
+Route::get('/', function() {
+    $category = request('category');
+    
+    if ($category) {
+        return redirect()->route('/category/'.$category, ['category' => $category]);
+    }
+    
+    $news = News::orderBy('published_at', 'desc')->get();
+    return view('welcome', compact('news'));
 })->name('home');
+
+
+
 
 
 Route::get('/news/{id}', function ($id) {
