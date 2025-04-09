@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\News;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
-use Str;
+use Illuminate\Support\Str;
+
 
 class NewsController extends Controller
 {
