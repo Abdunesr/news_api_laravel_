@@ -34,7 +34,7 @@
         responseBox.innerHTML = '<div class="flex justify-center py-4"><div class="animate-spin rounded-full h-6 w-6 border-t-2 border-b-2 border-blue-500"></div></div>';
 
         try {
-            const res = await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyA5FPTm3MIkTIeJCKYuyvlEGZVN--W0JRo", {
+            const res = await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
