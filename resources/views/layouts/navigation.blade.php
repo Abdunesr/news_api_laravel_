@@ -25,7 +25,7 @@
 
 
     @foreach(['sports', 'politics', 'entertainment', 'technology', 'science'] as $category)
-    <a href="{{ url('/?category=' . $category) }}" class="text-sm font-medium text-gray-700 hover:text-yellow-500 capitalize">
+    <a href="{{ url('/category/' . $category) }}" class="text-sm font-medium text-gray-700 hover:text-yellow-500 capitalize">
         {{ $category }}
     </a>
 @endforeach
