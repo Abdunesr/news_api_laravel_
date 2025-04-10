@@ -70,5 +70,8 @@ Route::middleware(['auth', AdminMiddleware::class])->prefix('admin')->group(func
     Route::post('/post-news', [NewsController::class, 'store'])->name('admin.news.store');
 });
 Route::post('/bot-response', [GeminiController::class, 'respond']);
+Route::fallback(function (){
+    return view('error.error');
+});
 
 require __DIR__.'/auth.php';
